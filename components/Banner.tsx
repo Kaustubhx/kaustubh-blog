@@ -3,7 +3,7 @@ type Props = {}
 
 function Banner({ }: Props) {
     return (
-        <div>
+        <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-5 justify-between font-bold px-10 py-10 mb-10">
             <div>
                 <h1 className="text-7xl">Kaustubh&apos; Weekly Blog</h1>
                 <h2 className="mt-5 md:mt-0">
@@ -14,6 +14,7 @@ function Banner({ }: Props) {
                     Favourite blog in the Devosphere
                 </h2>
             </div>
+
             <p className="mt-5 md:mt-2 text-gray-400 max-w-sm">
                 New product features | The Latest in techonolgy | The weekly debugging nightmare & More!
             </p>
