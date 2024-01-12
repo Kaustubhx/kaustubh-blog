@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import '../globals.css'
 import Header from '@/components/Header'
 import Banner from '@/components/Banner'
+import VisualEditing from '@/components/VisualEditing'
+import { draftMode } from "next/headers";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +24,7 @@ export default function RootLayout({
         <Header />
         <Banner />
         {children}
+        {draftMode().isEnabled && <VisualEditing />}
       </body>
     </html>
   )
