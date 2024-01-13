@@ -12,7 +12,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="flex">
+    <main className="">
       {
         draftMode().isEnabled ? (
           <PreviewBlogList initial={initial} />

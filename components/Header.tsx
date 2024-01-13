@@ -5,7 +5,7 @@ type Props = {}
 
 function Header({ }: Props) {
     return (
-        <header className='flex items-center justify-between space-x-2 font-bold px-10 py-5'>
+        <header className='flex items-center justify-between space-x-2 font-bold px-5 sm:px-10 py-5'>
             <div className='flex items-center space-x-2 '>
                 <Link
                     href={"/"}
@@ -29,7 +29,7 @@ function Header({ }: Props) {
                     href={"https://kaustubhx-portfolio.vercel.app/"}
                     className='px-5 py-3 text-sm md:text-base bg-gray-900 text-gray-100 flex items-center rounded-full'
                 >
-                    Go Back To Portfolio
+                    Go To Portfolio
                 </Link>
             </div>
         </header>
