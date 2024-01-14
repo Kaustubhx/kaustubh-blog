@@ -1,9 +1,25 @@
-import Image from 'next/image'
+import { SanityDocument } from "next-sanity";
+import { loadQuery } from "@/lib/sanity.store";
+import { POSTS_QUERY } from "@/lib/sanity.queries";
+import { draftMode } from "next/headers";
+import BlogList from '@/components/BlogList';
+import PreviewBlogList from "@/components/PreviewBlogList";
 
-export default function Home() {
+export default async function Home() {
+
+  const initial = await loadQuery<SanityDocument[]>(POSTS_QUERY, {}, {
+    perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+  });
+
   return (
-    <main className="flex items-center justify-center h-[50vh]">
-      <h1 className='text-7xl font-bold'>Coming Soon... Stay tuned</h1>
+    <main className="">
+      {
+        draftMode().isEnabled ? (
+          <PreviewBlogList initial={initial} />
+        ) : (
+          <BlogList posts={initial.data} />
+        )
+      }
     </main>
   )
 }
