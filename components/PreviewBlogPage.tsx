@@ -1,6 +1,5 @@
 "use client"
 
-import React from 'react'
 import BlogPage from './BlogPage';
 import { QueryResponseInitial, useQuery } from '@sanity/react-loader';
 import { SanityDocument } from 'next-sanity';
