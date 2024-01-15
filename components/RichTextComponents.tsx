@@ -1,21 +1,20 @@
 import Image from "next/image"
 import Link from "next/link"
 import urlFor from "@/lib/sanity.client"
+import RickTextBlockquote from "./RichTextBlockquote";
 
 export const RichTextComponents = {
     types: {
-        image: ({ value }: any) => {
-            return (
-                <div className='relative w-full h-96 m-10 mx-auto'>
-                    <Image
-                        className='object-contain'
-                        src={urlFor(value).url()}
-                        alt='Blog Post Image'
-                        fill
-                    />
-                </div>
-            )
-        },
+        image: ({ value }: any) => (
+            <div className='relative w-full h-96 m-10 mx-auto'>
+                <Image
+                    className='object-contain'
+                    src={urlFor(value).url()}
+                    alt='Blog Post Image'
+                    fill
+                />
+            </div>
+        )
     },
     list: {
         bullet: ({ children }: any) => (
@@ -44,9 +43,9 @@ export const RichTextComponents = {
         ),
 
         blockquote: ({ children }: any) => (
-            <blockquote className="border-l-neutral-900/40 border-l-4 pl-5 py-5 my-5">
+            <RickTextBlockquote>
                 {children}
-            </blockquote>
+            </RickTextBlockquote>
         ),
     },
     marks: {
